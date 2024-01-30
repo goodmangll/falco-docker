@@ -18,7 +18,7 @@
 
 #### 2.1 配置nginx（基本上不需要改）
 
-找到 `//emby2Alist/nginx/conf.d/emby.conf`​ 并编辑
+找到 `/raw-url-manager/emby2Alist/nginx/conf.d/emby.conf`​ 并编辑
 
 把`http://172.17.0.1:8096`​ 改为自己本机的emby地址。一般都是这个地址。
 
@@ -28,7 +28,7 @@
 
 #### 2.2 配置直连获取程序
 
-找到 `/rawUrlManager/fileRawUrlProxy/config.yml`​​ 进行配置
+找到 `/raw-url-manager/fileRawUrlProxy/config.yml`​​ 进行配置
 
 ```yml
 # alist相关配置
@@ -65,7 +65,7 @@ userPanContext:
 
 ### 3. 启动
 
-回到根目录 `/rawUrlManager`​ 执行下面命令进行启动
+回到根目录 `/raw-url-manager`​ 执行下面命令进行启动
 
 ```sh
 docker-compose up -d
@@ -75,7 +75,7 @@ docker-compose up -d
 
 ​![image](assets/image-20240125135635-9cbfi9u.png)​
 
-也可通过进入 `/rawUrlManager/fileRawUrlProxy/logs`​​ 目录 执行以下目录进行查看日志
+也可通过进入 `/raw-url-manager/fileRawUrlProxy/logs`​​ 目录 执行以下目录进行查看日志
 
 ```sh
 tail -f server.log
