@@ -1,0 +1,23 @@
+# alist相关配置
+alist:
+  # alist的token
+  token: alist-123
+  # alist的地址
+  address: http://172.17.0.1:5244
+
+# emby相关配置
+emby: 
+  # emby地址
+  address: http://172.17.0.1:8096
+  # emby的令牌，实测jellyfin需要填，emby可以不用填
+  apiKey: 123
+  # 磁盘映射目录。比如我emby有个电影的媒体库路径为 “/home/webdav/CloudDrive/115/电影”
+  # 而“/115/电影”是我alist的路径，那么这里就填“/home/webdav/CloudDrive”
+  mountPath: /home/webdav/CloudDrive
+
+# 配置emby|jellyfin 用户与盘的映射
+# 比如 de17fe7bbe6346a69155d8798c6f8909: '/ali'
+# de17fe7bbe6346a69155d8798c6f8909 是emby|jellyfin用户的ID   ali为alist盘
+userPanContext:
+  de17fe7bbe6346a69155d8798c6f8909: /ali
+  e1955a18b7d64f6f95fdd2379ec79456: /ali01
