@@ -21,4 +21,4 @@ services:
       - ./fileRawUrlProxy/config:/app/config
       - ./fileRawUrlProxy/logs:/app/logs
     ports:
-      - "13000:13000"
+      - 13000:13000
