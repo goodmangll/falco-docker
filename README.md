@@ -47,7 +47,7 @@ alist:
 emby: 
   # emby地址
   address: http://172.17.0.1:8096
-  # emby的令牌，实测jellyfin需要填，emby可以不用填
+  # emby的令牌
   apiKey: 123
   # 磁盘映射目录。比如我emby有个电影的媒体库路径为 “/home/webdav/CloudDrive/115/电影”
   # 而“/115/电影”是我alist的路径，那么这里就填“/home/webdav/CloudDrive”
