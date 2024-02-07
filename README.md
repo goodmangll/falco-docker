@@ -78,8 +78,6 @@ docker-compose up -d
 
 可使用docker ps 查看这两个容器进行启动
 
-​![image](assets/image-20240125135635-9cbfi9u.png)​
-
 也可通过进入 `/raw-url-manager/fileRawUrlProxy/logs`​​ 目录 执行以下目录进行查看日志
 
 ```sh
