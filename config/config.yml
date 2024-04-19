@@ -1,3 +1,6 @@
+# 临时文件名（注意：不要配置成自己的资源目录，里面的文件会被定时删除）
+tmpName: falcoTmp
+
 # alist相关配置
 alist:
   # alist的token

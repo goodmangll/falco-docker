@@ -1,24 +1,16 @@
-version: '3.3'
-
+version: '3.8'
 services:
-  # nginx 劫持
-  emby2Alist:
-    image: nginx:alpine
-    container_name: emby2Alist
-    ports:
-      - 8095:80
-    volumes:
-      - ./emby2Alist/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./emby2Alist/nginx/conf.d:/etc/nginx/conf.d
-      - ./emby2Alist/nginx/embyCache:/var/cache/nginx/emby
+  falco:
     restart: always
-  # 直连代理
-  fileRawUrlProxy:
-    restart: always
-    container_name: fileRawUrlProxy
-    image: registry.cn-hangzhou.aliyuncs.com/goodmangll/filerawurlproxy:1.0.0
+    container_name: falco
+    image: registry.cn-hangzhou.aliyuncs.com/goodmangll/falco:stable
     volumes:
-      - ./fileRawUrlProxy/config:/app/config
-      - ./fileRawUrlProxy/logs:/app/logs
+      - ./config:/user/src/app/config # 配置文件
+      - ./logs:/user/src/app/logs # 日志文件
+      # - ./nginx/conf/:/etc/nginx/ # 配置文件
+      # - ./nginx/cert/:/etc/cert/ # ssl证书
+      # - ./nginx/html/:/usr/share/nginx/html/ # 默认显示的index网页
+      # - ./nginx/logs/:/var/log/nginx/ # nginx日志文件
     ports:
-      - 13000:13000
+      - "8095:80"
+      
