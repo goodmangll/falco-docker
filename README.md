@@ -41,6 +41,9 @@ A：因为本程序有自动对缓存目录进行清除的功能，只有在删�
 找到 `config/config.yml`​​ 进行配置
 
 ```yml
+# 临时文件夹名（注意：不要配置成自己的资源目录，里面的文件会被定时删除）
+tmpName: 'falcoTmp',
+
 # alist相关配置
 alist:
   # alist的token
