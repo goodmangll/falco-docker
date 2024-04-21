@@ -1,3 +1,6 @@
+# 版本号
+version: 1.10.0
+
 # 临时文件名（注意：不要配置成自己的资源目录，里面的文件会被定时删除）
 tmpName: falcoTmp
 
@@ -21,6 +24,6 @@ emby:
 # 配置emby|jellyfin 用户与盘的映射
 # 比如 de17fe7bbe6346a69155d8798c6f8909: '/ali'
 # de17fe7bbe6346a69155d8798c6f8909 是emby|jellyfin用户的ID   ali为alist盘
-userPanContext:
+userDiskContext:
   de17fe7bbe6346a69155d8798c6f8909: /ali
   e1955a18b7d64f6f95fdd2379ec79456: /ali01
