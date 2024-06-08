@@ -1,29 +1,59 @@
-# 版本号
-version: 1.10.0
+# Falco版本号
+# 注意：
+# - 每一个版本对应的配置文件格式可能不一样（因为可能有新的配置项、删除了配置项）。也就说每个版本号都对应一个配置格式。
+# - 程序在启动时会根据配置文件中的版本号做兼容，并自动升级配置文件。
+# - 所以如果你想用新版特性（比如新版功能有个微信通知的功能默认不开启）有两种选择：
+#   - 自动升级配置：
+#     1. 先把镜像升级到最新版
+#     2. 然后更新并重启容器
+#     3. 你再打开配置文件会发现有一项微信通知的配置项，然后配置微信通知的配置项设置为开启，然后重新程序
+#   - 手动升级配置：
+#     1. 先改配置文件，手动新增微信通知的配置项并设置为开启
+#     2. 把版本号和配置格式改成最新的，把微信通知配置项加并设置为开启
+#     3. 然后升镜像
+#     4. 更新容器重启
+# - 推荐使用“自动升级配置”方式，因为如果当配置改动较多，手动改配置格式会有遗漏的风险
+version: 1.10.2
 
-# 临时文件名（注意：不要配置成自己的资源目录，里面的文件会被定时删除）
-tmpName: falcoTmp
+# 临时文件目录
+tmpName: facloTmp
 
 # alist相关配置
 alist:
   # alist的token
-  token: alist-123
+  token: 123
   # alist的地址
   address: http://172.17.0.1:5244
 
 # emby或者jellyfin的相关配置
-emby: 
+emby:   
   # 地址
   address: http://172.17.0.1:8096
   # 认证令牌，在emby或者jellyfin后台获取
   apiKey: 123
   # 磁盘映射目录。比如我emby有个电影的媒体库路径为 “/home/webdav/CloudDrive/115/电影”
-  # 而“/115/电影”是我alist的路径，那么这里就填“/home/webdav/CloudDrive”
+  # 而是我alist的中对应的这个路径为“/115/电影”，那么这里就填“/home/webdav/CloudDrive”
+  # 公式：/home/webdav/CloudDrive/115/电影 - /115/电影 = /home/webdav/CloudDrive
   mountPath: /home/webdav/CloudDrive
+  # 代理端口，如果使用host模式，请把端口改为宿主机没有暂用的端口，并且在连接emby时使用此端口
+  proxyPort: 80
 
-# 配置emby|jellyfin 用户与盘的映射
-# 比如 de17fe7bbe6346a69155d8798c6f8909: '/ali'
-# de17fe7bbe6346a69155d8798c6f8909 是emby|jellyfin用户的ID   ali为alist盘
+# 不需要转盘的盘列表，即使在用户点播的视频不在这个用户的所属盘，但是也不需要转盘
+# noTransferDiskList:
+#   - /115
+#   - /ali
+
+# 游客模式，即使该用户没有配置所属盘但是也可以播放视频，但是如果需要播放需要转盘的视频，则播放失败
+guestMode: false
+
+# 本地磁盘路径，如果你在emby媒体库中配置了本地磁盘，那么这里就填磁盘路径
+# localDiskPaths:
+#   - /media01
+#   - /media02
+
+# 配置emby,jellyfin用户与所属盘的映射
+# 比如 张三: /ali
+# 张三是emby中的用户名称 : ali为alist中的盘路径
 userDiskContext:
-  de17fe7bbe6346a69155d8798c6f8909: /ali
-  e1955a18b7d64f6f95fdd2379ec79456: /ali01
+  张三: /ali
+  李四: /ali01
