@@ -7,7 +7,7 @@
       volumes:
         - ./config:/user/src/app/config # 配置文件
         - ./logs:/user/src/app/logs # 日志文件
-        - ./nginx/logs/:/var/log/nginx/ # nginx日志文件
+        - ./nginx/logs/:/usr/local/openresty/nginx/logs # nginx日志文件
       ports:
-        - "8095:80"
-        
+        - 8095:80
+        - 13000：13000  
