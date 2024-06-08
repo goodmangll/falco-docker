@@ -116,7 +116,7 @@ error.log   错误类型的日志，程序异常时查看这个日志
 tail -f info.log
 ```
 
-如果容器正常启动，也可以通过web页面http://localhost:13000/html/log.html进行查看日志
+如果容器正常启动，也可以通过web页面 http://localhost:13000/html/log.html 进行查看日志
 
 ## 如何使用？
 在用客户端进行连接时：
