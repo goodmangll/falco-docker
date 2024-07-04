@@ -1,4 +1,4 @@
-![falco-docker](https://socialify.git.ci/goodmangll/falco-docker/image?description=1&descriptionEditable=%E6%9B%B4%E5%8A%A0%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7%E3%80%82&font=KoHo&forks=1&issues=1&language=1&name=1&owner=1&pattern=Floating%20Cogs&pulls=1&stargazers=1&theme=Light)
+![falco-docker](https://socialify.git.ci/goodmangll/falco-docker/image?description=1&descriptionEditable=%E6%9B%B4%E5%8A%A0%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7%E3%80%82&font=KoHo&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2Fgoodmangll%2Ffalco-docker%2Fblob%2Fmaster%2Fassets%2Flogo.png%3Fraw%3Dtrue&name=1&owner=1&pattern=Floating%20Cogs&pulls=1&stargazers=1&theme=Light)
 
 ## 已知BUG
 - strm(alist链接模式)不支持官方客户端、官方网页端、KODI。
