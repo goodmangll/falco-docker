@@ -1,19 +1,18 @@
 ![falco-docker](https://socialify.git.ci/goodmangll/falco-docker/image?description=1&descriptionEditable=%E6%9B%B4%E5%8A%A0%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7%E3%80%82&font=KoHo&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2Fgoodmangll%2Ffalco-docker%2Fblob%2Fmaster%2Fassets%2Flogo.png%3Fraw%3Dtrue&name=1&owner=1&pattern=Floating%20Cogs&pulls=1&stargazers=1&theme=Light)
 
-## 已知BUG
-- strm(alist链接模式)不支持官方客户端、官方网页端、KODI。
-- 当停留在客户端，然后重启falco，然后再到客户端进行播放会播放失败，只能重启falco后重启客户端才能播放。
-- 当启动falco时alist未启动或者正在初始化，falco会进入阻塞状态，并且不能自动恢复，只能等待手动重启。
+## 已知BUG。
+- 当启动falco时alist未启动或者正在初始化，falco会进入阻塞状态，并且不能自动恢复，只能等待手动重启
+- strm(alist链接) + jellyfin官方客户端外挂字幕无法加载
 
 ## 下个版本计划
 - 支持plex直连。
-- 提供多版本代理（可以同时代理多个jellyfin和emby服务端）。
-- 修复strm模式如果视频第一次播放，获取视频信息过慢的问题。
+- 提供多版本代理（可以同时代理多个jellyfin和emby服务端）
+- 修复strm模式如果视频第一次播放，获取视频信息过慢的问题
 
 ## 功能
-- falco配合alist可实现jellyfin、emby直连。
-- 可以配置用户与盘的映射，在播放时，会自动根据用户与盘的映射，自动转盘然后进行直连播放（可防止阿里云盘单账号多IP访问封号的风险）。
-- 转盘产生的临时文件会在退出播放后自动删除，防止网盘空间不足。
+- 配合alist可实现jellyfin、emby直连。
+- 可以配置用户与盘的映射，在播放时，会自动根据用户与盘的映射，自动转盘然后进行直连播放（可防止阿里云盘单账号多IP访问封号的风险）
+- 转盘产生的临时文件会在退出播放后自动删除，防止网盘空间不足
 
 ## 建议
 - jellyfin推荐使用镜像nyanmisaka/jellyfin:latest，优先在这个版本中做测试。
@@ -43,7 +42,7 @@ git clone https://github.com/goodmangll/falco-docker.git
 ```yml
 # Falco版本号
 # 版本号会随着程序自动更新，不需要手动修改
-version: 1.10.2
+version: 1.10.3
 
 # 临时文件目录
 tmpName: facloTmp
