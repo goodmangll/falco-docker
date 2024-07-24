@@ -2,7 +2,7 @@
 
 ## 已知BUG。
 - 当启动falco时alist未启动或者正在初始化，falco会进入阻塞状态，并且不能自动恢复，只能等待手动重启
-- strm(alist链接) + jellyfin官方客户端外挂字幕无法加载
+- strm(alist链接) + jellyfin官方PC客户端外挂字幕无法加载
 
 ## 下个版本计划
 - 支持plex直连。
